@@ -1,4 +1,5 @@
 module.exports = {
+  swcMinify: true,
   images: {
     domains: ['dtszrqr6lxc1q.cloudfront.net'],
   },
