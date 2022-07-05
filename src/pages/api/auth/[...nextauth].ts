@@ -12,6 +12,9 @@ import { prisma } from "../../../db/client";
 // import AppleProvider from "next-auth/providers/apple"
 // For more information on each option (and a full list of options) go to
 // https://next-auth.js.org/configuration/options
+//
+console.log("GITHUB_ID: ",process.env.GITHUB_ID);
+console.log("GITHUB_SECRET: ",process.env.GITHUB_SECRET);
 export default NextAuth({
   // https://next-auth.js.org/configuration/providers
   adapter: PrismaAdapter(prisma),
