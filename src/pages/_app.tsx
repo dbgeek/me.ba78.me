@@ -1,4 +1,5 @@
 import '../styles/globals.css'
+import { SessionProvider } from "next-auth/react";
 import type { AppProps } from 'next/app'
 import { withTRPC } from '@trpc/next';
 import superjson from 'superjson';
@@ -7,7 +8,17 @@ import type { AppRouter } from "../backend/router";
 
 
 const MyApp: AppType = ({ Component, pageProps }) => {
-  return <Component {...pageProps} />;
+  return (
+    <SessionProvider
+      // Provider options are not required but can be useful in situations where
+      // you have a short session maxAge time. Shown here with default values.
+      session={pageProps.session}
+    >
+      <div id="app" className="flex flex-col min-h-screen font-roboto dark:bg-gray-900">
+        <Component {...pageProps} />
+      </div>
+    </SessionProvider>
+  );
 };
 
 function getBaseUrl() {
