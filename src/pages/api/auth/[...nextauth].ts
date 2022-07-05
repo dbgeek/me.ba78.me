@@ -14,8 +14,6 @@ import { prisma } from "../../../db/client";
 // https://next-auth.js.org/configuration/options
 //
 export default NextAuth({
-  console.log("GITHUB_ID: ",process.env.GITHUB_ID);
-  console.log("GITHUB_SECRET: ",process.env.GITHUB_SECRET);
   // https://next-auth.js.org/configuration/providers
   adapter: PrismaAdapter(prisma),
   providers: [
