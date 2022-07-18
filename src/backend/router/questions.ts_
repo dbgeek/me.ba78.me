@@ -1,9 +1,0 @@
-import { prisma } from "../../db/client";
-import { createRouter } from "./context";
-
-export const questionRouter = createRouter()
-  .query("get-hello-world", {
-    async resolve() {
-      return await prisma.hello.findMany();
-    },
-  });

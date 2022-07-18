@@ -56,3 +56,10 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
+
+model Weight {
+  id        String    @id               @default(cuid())
+  createdAt DateTime  @default(now())  
+  weight    Decimal   @db.Decimal(5,2)
+  comment   String?
+}
